@@ -1,0 +1,401 @@
+/* Genel Stiller */
+:root {
+    --primary-color: #3B82F6;     /* Canlı mavi */
+    --secondary-color: #9B2C2C;   /* Canlı bordo */
+    --accent-color: #4F46E5;      /* Koyu mavi */
+    --text-color: #1F2937;        /* Koyu gri */
+    --text-light: #6B7280;        /* Orta gri */
+    --gray-100: #F3F4F6;          /* Açık gri */
+    --gray-200: #E5E7EB;          /* Orta açık gri */
+    --gray-800: #1F2937;          /* Koyu gri */
+    --white: #FFFFFF;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--gray-100);
+}
+
+/* Navbar Stilleri */
+.navbar {
+    transition: all 0.3s ease;
+    background: var(--white);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-scrolled {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Hero Bölümü */
+.hero-slider {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    padding: 6rem 0;
+    margin-bottom: 4rem;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+.hero-slider .carousel-item {
+    min-height: 450px;
+}
+
+/* Blog Kartları */
+.blog-card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--card-shadow);
+    background: var(--white);
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card .card-img-top {
+    height: 240px;
+    object-fit: cover;
+}
+
+.blog-card .card-body {
+    padding: 1.5rem;
+}
+
+.blog-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--gray-800);
+}
+
+.blog-card .card-text {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.badge.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Kategori Kartı */
+.category-card {
+    background: var(--white);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.category-card h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-list li {
+    margin-bottom: 0.75rem;
+}
+
+.category-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.category-list a:hover {
+    background-color: var(--gray-100);
+    color: var(--primary-color);
+}
+
+.category-list .badge {
+    background-color: var(--gray-200) !important;
+    color: var(--text-color) !important;
+}
+
+/* Arama Kutusu */
+.search-box {
+    background: var(--white);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+.search-box .form-control {
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+}
+
+.search-box .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+.search-box .btn-primary {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+}
+
+/* Sayfalama */
+.pagination {
+    margin-top: 3rem;
+}
+
+.pagination .page-link {
+    color: var(--text-color);
+    border: none;
+    margin: 0 0.25rem;
+    border-radius: 0.5rem;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.pagination .page-link:hover {
+    background-color: var(--gray-100);
+    color: var(--primary-color);
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    .hero-slider {
+        padding: 4rem 0;
+    }
+    
+    .hero-slider .carousel-item {
+        min-height: 350px;
+    }
+    
+    .blog-card .card-img-top {
+        height: 200px;
+    }
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: #333;
+    font-weight: 600;
+}
+
+.card-text {
+    color: #666;
+}
+
+footer {
+    background-color: var(--white);
+    border-top: 1px solid var(--gray-200);
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+.list-unstyled a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.list-unstyled a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    color: var(--text-color);
+}
+
+.btn-light:hover {
+    background-color: var(--gray-100);
+    color: var(--primary-color);
+}
+
+/* Link Stilleri */
+a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Alert Stilleri */
+.alert-info {
+    background-color: var(--gray-100);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.alert-info .alert-link {
+    color: var(--primary-color);
+}
+
+/* Kategori Grid Stilleri */
+.category-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 0.75rem;
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.category-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    color: var(--primary-color);
+}
+
+.category-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-100);
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.category-item:hover .category-icon {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.category-info {
+    flex: 1;
+}
+
+.category-info h6 {
+    margin: 0;
+    font-weight: 600;
+    color: inherit;
+}
+
+.category-arrow {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.category-item:hover .category-arrow {
+    color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+/* Popüler Yazı Kartı Stilleri */
+.popular-post-card {
+    background: var(--white);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-200);
+}
+
+.popular-post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: var(--primary-color);
+}
+
+.popular-post-card .card-title {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.popular-post-card .badge {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.65rem;
+}
+
+.popular-post-card .card-body {
+    background: var(--white);
+}
+
+/* Responsive Düzenlemeler */
+@media (min-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .popular-post-card .card-body {
+        padding: 0.75rem !important;
+    }
+    
+    .popular-post-card .badge {
+        font-size: 0.65rem;
+        padding: 0.25rem 0.5rem;
+    }
+} 
